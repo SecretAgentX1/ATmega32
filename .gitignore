@@ -4,3 +4,7 @@ Release/
 *.o
 *.elf
 *.hex
+.project
+.cproject
+.settings/
+main.c

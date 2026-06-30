@@ -8,6 +8,10 @@
 #ifndef STD_TYPES_H_
 #define STD_TYPES_H_
 
+#ifndef NULL
+#define NULL ((void*)0)
+#endif
+
 typedef unsigned char u8;
 typedef unsigned short int u16;
 typedef unsigned long int u32;

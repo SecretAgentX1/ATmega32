@@ -34,9 +34,9 @@ typedef struct{
 }LED_t;
 
 
-LED_ErrorStatus LED_enumInit(const LED_t* Copy_structLED);
-LED_ErrorStatus LED_enumOn(const LED_t* Copy_structLED);
-LED_ErrorStatus LED_enumOff(const LED_t* Copy_structLED);
+LED_ErrorStatus LED_enumInit  (const LED_t* Copy_structLED);
+LED_ErrorStatus LED_enumOn    (const LED_t* Copy_structLED);
+LED_ErrorStatus LED_enumOff   (const LED_t* Copy_structLED);
 LED_ErrorStatus LED_enumToggle(const LED_t* Copy_structLED);
 
 

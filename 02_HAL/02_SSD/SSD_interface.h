@@ -16,28 +16,30 @@
 #include "../../01_MCAL/01_DIO/DIO_interface.h"
 
 typedef enum{
-	LED_ACTIVE_LOW,
-	LED_ACTIVE_HIGH
-}LED_Connection;
+	SSD_COM_CATHODE,
+	SSD_COM_ANODE
+}SSD_Type;
 
 typedef enum {
-	LED_NOK,
-	LED_OK,
-	LED_NULL_POINTER,
-	LED_INVALID_CONNECTION
-} LED_ErrorStatus;
+	SSD_NOK,
+	SSD_OK,
+	SSD_NULL_POINTER,
+	SSD_INVALID_TYPE,
+	SSD_INVALID_NUMBER
+}SSD_ErrorStatus;
 
 typedef struct{
-	DIO_PORT_t Port;
-	DIO_PIN_t Pin;
-	LED_Connection connection;
-}LED_t;
+	SSD_Type Type;
+	DIO_PORT_t DataPort;
+	DIO_PORT_t EnablePort;
+	DIO_PIN_t EnablePin;
+}SSD_t;
 
 
-LED_ErrorStatus LED_enumInit(const LED_t* Copy_structLED);
-LED_ErrorStatus LED_enumOn(const LED_t* Copy_structLED);
-LED_ErrorStatus LED_enumOff(const LED_t* Copy_structLED);
-LED_ErrorStatus LED_enumToggle(const LED_t* Copy_structLED);
+SSD_ErrorStatus SSD_enumInit      (const SSD_t* Copy_structSSD);
+SSD_ErrorStatus SSD_enumOn        (const SSD_t* Copy_structSSD);
+SSD_ErrorStatus SSD_enumOff       (const SSD_t* Copy_structSSD);
+SSD_ErrorStatus SSD_enumDisplayNum(const SSD_t* Copy_structSSD,u8 Copy_u8Number);
 
 
 

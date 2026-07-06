@@ -10,7 +10,7 @@
  */
 
 
-#include "03_LIB/BIT_MATH.h"
+#include "BIT_MATH.h"
 
 #include "LED_interface.h"
 #include "LED_private.h"

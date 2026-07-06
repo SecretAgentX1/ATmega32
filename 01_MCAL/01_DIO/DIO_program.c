@@ -150,3 +150,71 @@ DIO_ErrorStatus DIO_enumTogglePortValue(DIO_PORT_t Copy_u8PORT){
 	}
 	return LOC_enumState;
 }
+
+DIO_ErrorStatus DIO_enumWriteLowNibble (DIO_PORT_t Copy_u8PORT, u8 Copy_u8Value){
+	DIO_ErrorStatus LOC_enumState = DIO_OK;
+	Copy_u8Value &= 0x0F;
+	u8 LOC_u8Temp;
+	switch(Copy_u8PORT){
+		case DIO_PORTA:
+			LOC_u8Temp = PORTA;
+			LOC_u8Temp &= 0xF0;
+			LOC_u8Temp |= Copy_u8Value;
+			PORTA = LOC_u8Temp;
+			break;
+		case DIO_PORTB:
+			LOC_u8Temp = PORTB;
+			LOC_u8Temp &= 0xF0;
+			LOC_u8Temp |= Copy_u8Value;
+			PORTB = LOC_u8Temp;
+			break;
+		case DIO_PORTC:
+			LOC_u8Temp = PORTC;
+			LOC_u8Temp &= 0xF0;
+			LOC_u8Temp |= Copy_u8Value;
+			PORTC = LOC_u8Temp;
+			break;
+		case DIO_PORTD:
+			LOC_u8Temp = PORTD;
+			LOC_u8Temp &= 0xF0;
+			LOC_u8Temp |= Copy_u8Value;
+			PORTD = LOC_u8Temp;
+			break;
+		default:LOC_enumState = DIO_NOK;
+	}
+	return LOC_enumState;
+}
+DIO_ErrorStatus DIO_enumWriteHighNibble(DIO_PORT_t Copy_u8PORT, u8 Copy_u8Value){
+	DIO_ErrorStatus LOC_enumState = DIO_OK;
+	Copy_u8Value &=0x0F;
+	Copy_u8Value <<=4;
+	u8 LOC_u8Temp;
+	switch(Copy_u8PORT){
+		case DIO_PORTA:
+			LOC_u8Temp = PORTA;
+			LOC_u8Temp &= 0x0F;
+			LOC_u8Temp |= Copy_u8Value;
+			PORTA = LOC_u8Temp;
+			break;
+		case DIO_PORTB:
+			LOC_u8Temp = PORTB;
+			LOC_u8Temp &= 0x0F;
+			LOC_u8Temp |= Copy_u8Value;
+			PORTB = LOC_u8Temp;
+			break;
+		case DIO_PORTC:
+			LOC_u8Temp = PORTC;
+			LOC_u8Temp &= 0x0F;
+			LOC_u8Temp |= Copy_u8Value;
+			PORTC = LOC_u8Temp;
+			break;
+		case DIO_PORTD:
+			LOC_u8Temp = PORTD;
+			LOC_u8Temp &= 0x0F;
+			LOC_u8Temp |= Copy_u8Value;
+			PORTD = LOC_u8Temp;
+			break;
+		default:LOC_enumState = DIO_NOK;
+	}
+	return LOC_enumState;
+}

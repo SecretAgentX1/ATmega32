@@ -57,5 +57,8 @@ DIO_ErrorStatus DIO_enumGetPortValue     (DIO_PORT_t Copy_u8PORT, u8 * Copy_u8Pt
 DIO_ErrorStatus DIO_enumTogglePortValue  (DIO_PORT_t Copy_u8PORT);
 
 
+DIO_ErrorStatus DIO_enumWriteLowNibble (DIO_PORT_t Copy_u8PORT, u8 Copy_u8Value);
+DIO_ErrorStatus DIO_enumWriteHighNibble(DIO_PORT_t Copy_u8PORT, u8 Copy_u8Value);
+
 
 #endif /* DIO_INTERFACE_H_ */

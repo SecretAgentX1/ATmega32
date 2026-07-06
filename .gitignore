@@ -8,3 +8,4 @@ Release/
 .cproject
 .settings/
 main.c
+inc/

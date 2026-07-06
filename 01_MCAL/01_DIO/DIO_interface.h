@@ -11,7 +11,7 @@
 
 #ifndef DIO_INTERFACE_H_
 #define DIO_INTERFACE_H_
-#include "../../03_LIB/STD_TYPES.h"
+#include "STD_TYPES.h"
 typedef enum {
 	DIO_INPUT,
 	DIO_OUTPUT

@@ -11,9 +11,9 @@
 
 #ifndef SSD_INTERFACE_H_
 #define SSD_INTERFACE_H_
-#include "../../03_LIB/STD_TYPES.h"
-#include "../../03_LIB/BIT_MATH.h"
-#include "../../01_MCAL/01_DIO/DIO_interface.h"
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+#include "DIO_interface.h"
 
 typedef enum{
 	SSD_COM_CATHODE,

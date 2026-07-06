@@ -11,5 +11,5 @@
 
 #ifndef SSD_PRIVATE_H_
 #define SSD_PRIVATE_H_
-#include "../../03_LIB/STD_TYPES.h"
+#include "STD_TYPES.h"
 #endif /* SSD_PRIVATE_H_ */

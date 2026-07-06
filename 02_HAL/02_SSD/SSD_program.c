@@ -10,7 +10,7 @@
  */
 
 
-#include "../../03_LIB/BIT_MATH.h"
+#include "BIT_MATH.h"
 
 #include "SSD_interface.h"
 #include "SSD_private.h"

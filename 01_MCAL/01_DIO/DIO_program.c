@@ -218,3 +218,65 @@ DIO_ErrorStatus DIO_enumWriteHighNibble(DIO_PORT_t Copy_u8PORT, u8 Copy_u8Value)
 	}
 	return LOC_enumState;
 }
+
+
+DIO_ErrorStatus DIO_enumConnectPullup  (DIO_PORT_t Copy_u8PORT, DIO_PIN_t Copy_u8PIN, DIO_PIN_Value_t Copy_u8ConnectPullup){
+	DIO_ErrorStatus LOC_enumState = DIO_OK ;
+
+	if((Copy_u8PORT <= DIO_PORTD) && (Copy_u8PIN <= DIO_PIN7))
+	{
+		switch(Copy_u8PORT)
+		{
+		case DIO_PORTA:
+			if(Copy_u8ConnectPullup == DIO_HIGH){
+				CLR_BIT(SFIOR,PUD);
+				CLR_BIT(DDRA,Copy_u8PIN);
+				SET_BIT(PORTA,Copy_u8PIN);
+			}
+			else {
+				CLR_BIT(PORTA,Copy_u8PIN);
+			}
+			break;
+
+		case DIO_PORTB:
+			if(Copy_u8ConnectPullup == DIO_HIGH){
+				CLR_BIT(SFIOR,PUD);
+				CLR_BIT(DDRB,Copy_u8PIN);
+				SET_BIT(PORTB,Copy_u8PIN);
+			}
+			else {
+				CLR_BIT(PORTB,Copy_u8PIN);
+			}
+			break;
+
+		case DIO_PORTC:
+			if(Copy_u8ConnectPullup == DIO_HIGH){
+				CLR_BIT(SFIOR,PUD);
+				CLR_BIT(DDRC,Copy_u8PIN);
+				SET_BIT(PORTC,Copy_u8PIN);
+			}
+			else {
+				CLR_BIT(PORTC,Copy_u8PIN);
+			}
+			break;
+
+		case DIO_PORTD:
+			if(Copy_u8ConnectPullup == DIO_HIGH){
+				CLR_BIT(SFIOR,PUD);
+				CLR_BIT(DDRD,Copy_u8PIN);
+				SET_BIT(PORTD,Copy_u8PIN);
+			}
+			else {
+				CLR_BIT(PORTD,Copy_u8PIN);
+			}
+			break;
+		}
+	}
+	else LOC_enumState = DIO_NOK ;
+
+	return LOC_enumState;
+}
+DIO_ErrorStatus DIO_enumDisablePullup  (){
+	SET_BIT(SFIOR,PUD);
+	return DIO_OK;
+}

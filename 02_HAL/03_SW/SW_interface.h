@@ -31,9 +31,9 @@ typedef enum {
 #define SW_FLOATING 3
 
 typedef struct{
-	DIO_PORT_t Port,
-	DIO_PIN_t Pin,
-	u8 Pull_State
+	DIO_PORT_t Port;
+	DIO_PIN_t Pin;
+	u8 Pull_State;
 } SW_Type;
 
 

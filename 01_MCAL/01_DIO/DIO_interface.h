@@ -44,6 +44,8 @@ typedef enum {
 	DIO_NOK,
 	DIO_OK
 } DIO_ErrorStatus;
+
+#define PUD 2
 DIO_ErrorStatus DIO_enumSetPinDirection (DIO_PORT_t Copy_u8PORT, DIO_PIN_t Copy_u8PIN, DIO_Direction_t Copy_u8Direction);
 DIO_ErrorStatus DIO_enumSetPinValue     (DIO_PORT_t Copy_u8PORT, DIO_PIN_t Copy_u8PIN, DIO_PIN_Value_t Copy_u8Value    );
 DIO_ErrorStatus DIO_enumGetPinValue     (DIO_PORT_t Copy_u8PORT, DIO_PIN_t Copy_u8PIN, u8 * Copy_u8PtrData			   );

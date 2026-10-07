@@ -62,5 +62,8 @@ DIO_ErrorStatus DIO_enumTogglePortValue  (DIO_PORT_t Copy_u8PORT);
 DIO_ErrorStatus DIO_enumWriteLowNibble (DIO_PORT_t Copy_u8PORT, u8 Copy_u8Value);
 DIO_ErrorStatus DIO_enumWriteHighNibble(DIO_PORT_t Copy_u8PORT, u8 Copy_u8Value);
 
+DIO_ErrorStatus DIO_enumConnectPullup  (DIO_PORT_t Copy_u8PORT, DIO_PIN_t Copy_u8PIN, DIO_PIN_Value_t Copy_u8ConnectPullup);
+DIO_ErrorStatus DIO_enumDisablePullup  ();
+
 
 #endif /* DIO_INTERFACE_H_ */

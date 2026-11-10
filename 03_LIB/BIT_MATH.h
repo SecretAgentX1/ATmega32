@@ -12,5 +12,7 @@
 #define CLR_BIT(reg,bit) ((reg)&=(~(1U<<(bit))))
 #define TOG_BIT(reg,bit) ((reg)^=(1U<<(bit)))
 #define GET_BIT(reg,bit) (((reg)&(1U<<(bit)))>>(bit))
-
+#define WRITE_BITS(reg, value, start, end) \
+    ((reg) = ((reg) & ~(((1U << ((end) - (start) + 1)) - 1) << (start))) | \
+    (((value) << (start)) & (((1U << ((end) - (start) + 1)) - 1) << (start))))
 #endif /* BIT_MATH_H_ */

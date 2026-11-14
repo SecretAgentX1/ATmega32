@@ -15,4 +15,6 @@
 #define WRITE_BITS(reg, value, start, end) \
     ((reg) = ((reg) & ~(((1U << ((end) - (start) + 1)) - 1) << (start))) | \
     (((value) << (start)) & (((1U << ((end) - (start) + 1)) - 1) << (start))))
+#define GET_BITS(reg, start, end) \
+    (((reg) >> (start)) & ((1U << ((end) - (start) + 1)) - 1))
 #endif /* BIT_MATH_H_ */

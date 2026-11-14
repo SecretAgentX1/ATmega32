@@ -18,6 +18,26 @@
 #define ADCH   *((volatile u8*)0x25)
 #define ADCL   *((volatile u8*)0x24)
 
-u8 ADC_u8DirChanged = 0;
+#define ADLAR 5
+
+#define ADEN  7
+#define ADSC  6
+#define ADATE 5
+#define ADIF  4
+#define ADIE  3
+
+
+#define ADC_IDLE 0
+#define ADC_BUSY 1
+
+
+#define ADC_CHANNEL_ASYNCH 0
+#define ADC_CHAIN_ASYNCH   1
+
+#define ADC_CONF   0
+#define ADC_RECONF 1
+
+u16 ADC_u16Read(void);
+void ADC_voidSaveConfig(void);
 
 #endif /* ADC_PRIVATE_H_ */

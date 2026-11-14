@@ -60,6 +60,8 @@
 #define ADC_VBG  30
 #define ADC_GND  31
 
+#define ADC_CONFIG 32
+
 
 #define ADC_SINGLE_CONVERSION 0
 #define ADC_AUTO_TRIGGER      1
@@ -88,21 +90,22 @@
 #define ADC_DIV128 7
 
 
-#define ADLAR 5
+#define OK u8(-10)
+#define INVALID_NULL_POINTER u8(-1)
+#define ADC_BUSY_Problem u8(-2)
 
-#define ADEN  7
-#define ADSC  6
-#define ADATE 5
-#define ADIF  4
-#define ADIE  3
+typedef struct
+{
+	u8*  Channel ;
+	u16* Result  ;
+	u8   Size    ;
+	void (*NotificationJob)(void);
+}Chain_t ;
 
-#define ADC_CONF_CHANGED 0
-#define ADC_CONF         1
-
-void ADC_voidInit(void);
-u16 ADC_u16Read   (void);
-
-
+void ADC_voidInit                (void);
+u16 ADC_u16GetResultSync         (void);
+u8 ADC_u8StartConversionAsynch   (u8 Copy_u8Channel,void(*Copy_pfNotification)(void),u16* Copy_u8Result);
+u8 ADC_u8StartChainAsynch 		 (Chain_t * Copy_Chain);
 
 
 #endif /* ADC_INTERFACE_H_ */

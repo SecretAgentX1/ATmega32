@@ -90,9 +90,9 @@
 #define ADC_DIV128 7
 
 
-#define OK u8(-10)
-#define INVALID_NULL_POINTER u8(-1)
-#define ADC_BUSY_Problem u8(-2)
+#define ADC_OK ((u8)-10)
+#define ADC_INVALID_NULL_POINTER ((u8)-1)
+#define ADC_BUSY_Problem ((u8)-2)
 
 typedef struct
 {
@@ -106,6 +106,6 @@ void ADC_voidInit                (void);
 u16 ADC_u16GetResultSync         (void);
 u8 ADC_u8StartConversionAsynch   (u8 Copy_u8Channel,void(*Copy_pfNotification)(void),u16* Copy_u8Result);
 u8 ADC_u8StartChainAsynch 		 (Chain_t * Copy_Chain);
-
-
+u8 ADC_u8StartAutoTrigger        (void(*Copy_pfNotification)(void), u16* Copy_u8Result);
+u16 ADC_u16GetAutoResult      ();
 #endif /* ADC_INTERFACE_H_ */

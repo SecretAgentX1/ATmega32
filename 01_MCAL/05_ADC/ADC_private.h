@@ -31,13 +31,16 @@
 #define ADC_BUSY 1
 
 
-#define ADC_CHANNEL_ASYNCH 0
-#define ADC_CHAIN_ASYNCH   1
+#define ADC_CHANNEL_ASYNCH        0
+#define ADC_CHAIN_ASYNCH          1
+#define ADC_AUTO_TRIGGER_ASYNCH   2
 
 #define ADC_CONF   0
 #define ADC_RECONF 1
 
-u16 ADC_u16Read(void);
-void ADC_voidSaveConfig(void);
+u16 ADC_u16Read         (void);
+void ADC_voidSaveConfig (void);
+void ADC_u8SetCallBack  (void(*pfCallBack)(void));
+
 
 #endif /* ADC_PRIVATE_H_ */
